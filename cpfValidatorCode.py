@@ -23,3 +23,7 @@ if restOf < 2:
     verifyingDigit = 0
 else:
     verifyingDigit = 11 - restOf
+
+b = 0
+while b <= 2:
+    arrayCpf.pop()
