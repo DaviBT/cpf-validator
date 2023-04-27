@@ -27,3 +27,5 @@ else:
 b = 0
 while b <= 2:
     arrayCpf.pop()
+
+arrayCpf.append(verifyingDigit)
