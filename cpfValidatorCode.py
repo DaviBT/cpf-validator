@@ -45,3 +45,14 @@ for i in range(10):
     position2 += 1
     factor -= 1
 print(sumMultiplications2)
+
+restOf2 = sumMultiplications2 % 11
+
+if restOf2 < 2:
+    verifyingDigit2 = 0
+else:
+    verifyingDigit2 = 11 - restOf2
+
+CpfArray = secondVerificationCpfArray
+CpfArray.append(verifyingDigit2)
+cpf = '.'.join(CpfArray)
