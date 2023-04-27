@@ -16,8 +16,6 @@ for i in range(firt9digitsOfCpf):
     position += 1
     sumMultiplications += multiplication # adding the result of each multiplication to the sum
 
-print("Sum of multiplications:", sumMultiplications) 
-
 restOf = sumMultiplications % 11
 if restOf < 2:
     verifyingDigit = 0
@@ -44,7 +42,6 @@ for i in range(10):
     sumMultiplications2 += multiplication2 # adding the result of each multiplication to the sum
     position2 += 1
     factor -= 1
-print(sumMultiplications2)
 
 restOf2 = sumMultiplications2 % 11
 
@@ -55,4 +52,18 @@ else:
 
 CpfArray = secondVerificationCpfArray
 CpfArray.append(verifyingDigit2)
-cpf = '.'.join(CpfArray)
+
+# Divide array in groups of three
+groupsOfThree = [CpfArray[i:i+3] for i in range(0, len(CpfArray)-2, 3)]
+
+# array containing group of three separated by a float
+groupsWithFloat = [''.join(map(str, group)) for group in groupsOfThree]
+
+# Joining every groups in a unique string separated by a float 
+stringNum = '.'.join(groupsWithFloat)
+
+# putting a hyphen in the last two and joinning the last two itens
+LastTwo = ''.join(map(str, CpfArray[-2:]))
+stringNum += '-' + LastTwo
+
+print(stringNum)
