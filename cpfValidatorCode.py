@@ -1,4 +1,4 @@
-cpf = input("Enter your CPF (put a space between each number): ")
+cpf = input("Enter your CPF (put a space between each number): ") 
 
 arrayCpf = cpf.split(" ")
 
@@ -17,3 +17,9 @@ for i in range(firt9digitsOfCpf):
     sumMultiplications += multiplication # adding the result of each multiplication to the sum
 
 print("Sum of multiplications:", sumMultiplications) 
+
+restOf = sumMultiplications % 11
+if restOf < 2:
+    verifyingDigit = 0
+else:
+    verifyingDigit = 11 - restOf
